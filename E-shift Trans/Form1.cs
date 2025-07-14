@@ -29,14 +29,15 @@ namespace E_shift_Trans
 
         private void logbtn_Click(object sender, EventArgs e)
         {
-
             string username = Usernametxt.Text.Trim();
             string password = Passwordtxt.Text.Trim();
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (username == "" || password == "")
             {
                 MessageBox.Show("Please enter both Username and Password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+
+   
             }
 
             try
@@ -44,49 +45,31 @@ namespace E_shift_Trans
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-
-                    // 1. Check Admin Table
-                    string adminQuery = "SELECT PasswordHash FROM Users WHERE Username=@username";
-                    using (SqlCommand adminCmd = new SqlCommand(adminQuery, con))
+                    string query = "SELECT COUNT(1) FROM Users WHERE Username=@username AND Password=@password";
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        adminCmd.Parameters.AddWithValue("@username", username);
-                        object adminResult = adminCmd.ExecuteScalar();
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@passwordhash", password);
 
-                        if (adminResult != null)
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (count == 1)
                         {
-                            string adminHash = adminResult.ToString();
-                            if (BCrypt.Net.BCrypt.Verify(password, adminHash))
-                            {
-                                MessageBox.Show("Admin Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Adashboard adashboard = new Adashboard();
-                                adashboard.Show();
-                                this.Hide();
-                                return;
-                            }
+                            MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // Navigate to the next form or main application window
+
+                            Adashboard adashboard = new Adashboard();
+                            adashboard.Show();
+                            this.Hide();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username or Password is incorrect.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Usernametxt.Text = "";
+                            Passwordtxt.Text = "";
                         }
                     }
-
-                    // 2. Check Customer Table
-                    string customerQuery = "SELECT passwordhash FROM customerR WHERE email=@username";
-                    using (SqlCommand custCmd = new SqlCommand(customerQuery, con))
-                    {
-                        custCmd.Parameters.AddWithValue("@username", username);
-                        object custResult = custCmd.ExecuteScalar();
-
-                        if (custResult != null)
-                        {
-                            string custHash = custResult.ToString();
-                            if (BCrypt.Net.BCrypt.Verify(password, custHash))
-                            {
-
-                            }
-                        }
-                    }
-
-                    // 3. If not found in both tables
-                    MessageBox.Show("Username or Password is incorrect.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Usernametxt.Text = "";
-                    Passwordtxt.Text = "";
                 }
             }
             catch (Exception ex)
@@ -94,6 +77,7 @@ namespace E_shift_Trans
                 MessageBox.Show("Error connecting to database: " + ex.Message);
             }
         }
+
         private void label5_Click(object sender, EventArgs e)
         {
             Register register = new Register();
