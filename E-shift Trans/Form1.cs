@@ -7,10 +7,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Web;
 using System.Windows.Forms;
 using BCrypt.Net;
+using System.Diagnostics.Eventing.Reader;
 
 namespace E_shift_Trans
 {
@@ -29,15 +29,13 @@ namespace E_shift_Trans
 
         private void logbtn_Click(object sender, EventArgs e)
         {
-            string username = Usernametxt.Text.Trim();
+            string usernameOrEmail = Usernametxt.Text.Trim();
             string password = Passwordtxt.Text.Trim();
 
-            if (username == "" || password == "")
+            if (string.IsNullOrEmpty(usernameOrEmail) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please enter both Username and Password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter both Username/Email and Password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-
-   
             }
 
             try
@@ -45,39 +43,71 @@ namespace E_shift_Trans
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(1) FROM Users WHERE Username=@username AND Password=@password";
-                    using (SqlCommand cmd = new SqlCommand(query, con))
+
+                    // Check Admin Users table
+                    string adminQuery = "SELECT PasswordHash FROM Users WHERE Username = @username";
+                    using (SqlCommand cmd = new SqlCommand(adminQuery, con))
                     {
-                        cmd.Parameters.AddWithValue("@username", username);
-                        cmd.Parameters.AddWithValue("@passwordhash", password);
+                        cmd.Parameters.AddWithValue("@username", usernameOrEmail);
+                        object result = cmd.ExecuteScalar();
 
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                        if (count == 1)
+                        if (result != null)
                         {
-                            MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Navigate to the next form or main application window
+                            string storedHash = result.ToString();
 
-                            Adashboard adashboard = new Adashboard();
-                            adashboard.Show();
-                            this.Hide();
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Username or Password is incorrect.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            Usernametxt.Text = "";
-                            Passwordtxt.Text = "";
+                            if (BCrypt.Net.BCrypt.Verify(password, storedHash))
+                            {
+                                MessageBox.Show("Admin Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Adashboard adashboard = new Adashboard();
+                                adashboard.Show();
+                                this.Hide();
+                                return;
+                            }
                         }
                     }
+
+                    // If not Admin, check Customer table
+                    // Inside the login button click handler (customer check section)
+                    string customerQuery = "SELECT name, passwordhash FROM customerR WHERE email = @customerEmail";
+                    using (SqlCommand cmd = new SqlCommand(customerQuery, con))
+                    {
+                        cmd.Parameters.AddWithValue("@customerEmail", usernameOrEmail);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string customerName = reader["name"].ToString(); // Get the name from DB
+                                string storedHash = reader["passwordhash"].ToString();
+
+                                if (BCrypt.Net.BCrypt.Verify(password, storedHash))
+                                {
+                                    MessageBox.Show("Customer Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    // Pass the CORRECT variable (customerName, not 'name')
+                                    Cdashboard cdashboard = new Cdashboard(customerName);
+                                    cdashboard.Show();
+                                    this.Hide();
+                                    return;
+                                }
+                            }
+                        }
+                    }
+
+                    // If neither Admin nor Customer matched
+                    MessageBox.Show("Username/Email or Password is incorrect.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Usernametxt.Text = "";
+                    Passwordtxt.Text = "";
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error connecting to database: " + ex.Message);
             }
+        
         }
 
+
+    
         private void label5_Click(object sender, EventArgs e)
         {
             Register register = new Register();
@@ -98,5 +128,14 @@ namespace E_shift_Trans
                 Passwordtxt.PasswordChar = '*';
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string plainPassword = "admin123";  // Or any password you want
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(plainPassword);
+
+            MessageBox.Show("Hashed Password: " + hashedPassword);
+        }
     }
-}
+    }
+

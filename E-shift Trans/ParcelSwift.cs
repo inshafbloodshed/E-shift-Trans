@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace E_shift_Trans
 {
-    public partial class Admindashboard : Form
+    public partial class ParcelSwift : Form
     {
-        public Admindashboard()
+        public ParcelSwift()
         {
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }

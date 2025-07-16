@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace E_shift_Trans
 {
-    public partial class Admindashboard : Form
+    public partial class packagedelivery : Form
     {
-        public Admindashboard()
+        public packagedelivery()
         {
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
