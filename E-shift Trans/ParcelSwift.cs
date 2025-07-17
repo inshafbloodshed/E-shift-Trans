@@ -12,14 +12,71 @@ namespace E_shift_Trans
 {
     public partial class ParcelSwift : Form
     {
-        public ParcelSwift()
+        private string _customerName;
+        private int deliverySpeedCost = 0;
+        public ParcelSwift(string customerName)
         {
             InitializeComponent();
+            txtpicup.Text = "Enter Pickup Location";
+            txtlocation.Text = "Enter Delivery Location";
+
+            cready.Items.AddRange(new string[] { "Today", "Tomorrow", "Next Week" });
+            cready.Text = "None";
+            _customerName = customerName;
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ParcelSwift_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtpicup_TextChanged(object sender, EventArgs e)
+        {
+            if (txtlocation.Text == "Enter Pickup Location")
+                txtlocation.Text = "";
+        }
+
+        private void txtlocation_TextChanged(object sender, EventArgs e)
+        {
+            if (txtlocation.Text == "Enter Delivery Location")
+                txtlocation.Text = "";
+        }
+
+        private void txtExpress_Click(object sender, EventArgs e)
+        {
+            deliverySpeedCost = 3000;
+        }
+
+        private void txtSatndard_Click(object sender, EventArgs e)
+        {
+            deliverySpeedCost = 2000;
+        }
+
+        private void txtEconomy_Click(object sender, EventArgs e)
+        {
+            deliverySpeedCost = 1000;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtpicup.Text == "" || txtlocation.Text == "" || cready.SelectedIndex == -1 || deliverySpeedCost == 0)
+            {
+                MessageBox.Show("Please complete all fields and select delivery speed.");
+                return;
+            }
+
+            packagedelivery packagedelivery = new packagedelivery(txtpicup.Text, 
+                txtlocation.Text, 
+                cready.Text, 
+                deliverySpeedCost);
+            packagedelivery.Show();
+            this.Hide();
+    
         }
     }
 }

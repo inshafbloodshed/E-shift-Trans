@@ -162,5 +162,10 @@ namespace E_shift_Trans
                 packageCost = 00;
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

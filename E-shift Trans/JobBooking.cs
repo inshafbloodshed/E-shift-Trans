@@ -12,7 +12,8 @@ namespace E_shift_Trans
 {
     public partial class JobBooking : Form
     {
-        public JobBooking()
+        private string _customerName;
+        public JobBooking(string customName)
         {
             InitializeComponent();
         }
@@ -58,5 +59,12 @@ namespace E_shift_Trans
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ParcelSwift parcelSwift = new ParcelSwift(_customerName);
+            parcelSwift.Show();
+            this.Hide();
+
+        }
     }
 }

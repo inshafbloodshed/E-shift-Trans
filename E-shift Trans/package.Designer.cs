@@ -125,7 +125,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 7;
-            this.button6.Text = "Countinue";
+            this.button6.Text = "0";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // package

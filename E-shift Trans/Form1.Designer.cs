@@ -77,6 +77,7 @@
             // 
             // Usernametxt
             // 
+            this.Usernametxt.ForeColor = System.Drawing.Color.DimGray;
             this.Usernametxt.Location = new System.Drawing.Point(187, 85);
             this.Usernametxt.Name = "Usernametxt";
             this.Usernametxt.Size = new System.Drawing.Size(214, 20);

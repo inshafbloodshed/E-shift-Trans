@@ -33,16 +33,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtPickupLocation = new System.Windows.Forms.TextBox();
-            this.txtDeliveryLocation = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btncontinue = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDeliveryLocation = new System.Windows.Forms.TextBox();
+            this.txtPickupLocation = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Parcel Swift";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel1
             // 
@@ -101,75 +102,15 @@
             this.panel1.Size = new System.Drawing.Size(522, 202);
             this.panel1.TabIndex = 4;
             // 
-            // label3
+            // btncontinue
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "ShiftHive Booking";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Pickup location";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 74);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(85, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Delivery location";
-            // 
-            // txtPickupLocation
-            // 
-            this.txtPickupLocation.Location = new System.Drawing.Point(9, 49);
-            this.txtPickupLocation.Name = "txtPickupLocation";
-            this.txtPickupLocation.Size = new System.Drawing.Size(484, 20);
-            this.txtPickupLocation.TabIndex = 8;
-            // 
-            // txtDeliveryLocation
-            // 
-            this.txtDeliveryLocation.Location = new System.Drawing.Point(9, 90);
-            this.txtDeliveryLocation.Name = "txtDeliveryLocation";
-            this.txtDeliveryLocation.Size = new System.Drawing.Size(484, 20);
-            this.txtDeliveryLocation.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 116);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(69, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "PickUP Date";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(9, 129);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(224, 20);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(259, 113);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(73, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Prefered Time";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.btncontinue.Location = new System.Drawing.Point(175, 163);
+            this.btncontinue.Name = "btncontinue";
+            this.btncontinue.Size = new System.Drawing.Size(157, 26);
+            this.btncontinue.TabIndex = 5;
+            this.btncontinue.Text = "Countinue";
+            this.btncontinue.UseVisualStyleBackColor = true;
+            this.btncontinue.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox1
             // 
@@ -183,15 +124,75 @@
             this.comboBox1.Size = new System.Drawing.Size(231, 21);
             this.comboBox1.TabIndex = 13;
             // 
-            // btncontinue
+            // label7
             // 
-            this.btncontinue.Location = new System.Drawing.Point(175, 163);
-            this.btncontinue.Name = "btncontinue";
-            this.btncontinue.Size = new System.Drawing.Size(157, 26);
-            this.btncontinue.TabIndex = 5;
-            this.btncontinue.Text = "Countinue";
-            this.btncontinue.UseVisualStyleBackColor = true;
-            this.btncontinue.Click += new System.EventHandler(this.button3_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(259, 113);
+            this.label7.Name = "label7";
+            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Prefered Time";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(9, 129);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(224, 20);
+            this.dateTimePicker1.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 116);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "PickUP Date";
+            // 
+            // txtDeliveryLocation
+            // 
+            this.txtDeliveryLocation.Location = new System.Drawing.Point(9, 90);
+            this.txtDeliveryLocation.Name = "txtDeliveryLocation";
+            this.txtDeliveryLocation.Size = new System.Drawing.Size(484, 20);
+            this.txtDeliveryLocation.TabIndex = 9;
+            // 
+            // txtPickupLocation
+            // 
+            this.txtPickupLocation.Location = new System.Drawing.Point(9, 49);
+            this.txtPickupLocation.Name = "txtPickupLocation";
+            this.txtPickupLocation.Size = new System.Drawing.Size(484, 20);
+            this.txtPickupLocation.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 74);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Delivery location";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Pickup location";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "ShiftHive Booking";
             // 
             // JobBooking
             // 
