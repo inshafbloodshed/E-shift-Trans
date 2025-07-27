@@ -19,6 +19,7 @@ namespace E_shift_Trans
         private DateTime pickupDate;
         private string preferredTime;
         private string specialInstruction = "";
+        
 
         public SwiftHive(string pickupLocation, string deliveryLocation, DateTime pickupDate, string preferredTime)
         {
@@ -40,71 +41,35 @@ namespace E_shift_Trans
         {
         }
         private void button6_Click(object sender, EventArgs e)
-        {
-            int totalCost = vehicleCost + packageCost;
-
-            string query = "INSERT INTO CustomerBookings (PickupLocation, DeliveryLocation, PickupDate, PreferredTime, Goods, Vehicle, VehicleCost, Package, PackageCost, SpecialInstruction, TotalCost) " +
-                           "VALUES (@Pickup, @Delivery, @PickupDate, @Time, @Goods, @Vehicle, @VehicleCost, @Package, @PackageCost, @Instruction, @TotalCost)";
-
-            SqlConnection con = new SqlConnection(connectionString);
-
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@Pickup", pickupLocation);
-                    cmd.Parameters.AddWithValue("@Delivery", deliveryLocation);
-                    cmd.Parameters.AddWithValue("@PickupDate", pickupDate);
-                    cmd.Parameters.AddWithValue("@Time", preferredTime);
-                    cmd.Parameters.AddWithValue("@Goods", selectedGood);
-                    cmd.Parameters.AddWithValue("@Vehicle", selectedVehicle);
-                    cmd.Parameters.AddWithValue("@VehicleCost", vehicleCost);
-                    cmd.Parameters.AddWithValue("@Package", selectedPackage);
-                    cmd.Parameters.AddWithValue("@PackageCost", packageCost);
-                    cmd.Parameters.AddWithValue("@Instruction", specialInstruction);
-                    cmd.Parameters.AddWithValue("@TotalCost", totalCost);
-
-                    cmd.ExecuteNonQuery();
-                }
-
-                // Fetch and display data in DataGridView
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM CustomerBookings", con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-
-                con.Close();
-            }
-
-            MessageBox.Show("Booking saved successfully and summary loaded!");
+        { 
+        
         }
-
-   
+            
     
         private string selectedGood = "";
         private void txtfurniture_Click(object sender, EventArgs e)
         {
-            selectedGood = (sender as Button).Text;
+            selectedGood = "Furniture";
         }
 
         private void txtboxes_Click(object sender, EventArgs e)
         {
-            selectedGood = (sender as Button).Text;
+            selectedGood = "Boxes";
         }
 
         private void txtelectronics_Click(object sender, EventArgs e)
         {
-            selectedGood = (sender as Button).Text;
+            selectedGood = "Electronics";
         }
 
         private void txtvechicles_Click(object sender, EventArgs e)
         {
-            selectedGood = (sender as Button).Text;
+            selectedGood = "Vechicles";
         }
 
         private void txtoffiecemove_Click(object sender, EventArgs e)
         {
-            selectedGood = (sender as Button).Text;
+            selectedGood = "Offiece Move";
         }
 
         private string selectedVehicle = "";
@@ -167,5 +132,69 @@ namespace E_shift_Trans
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cuiButton6_Click(object sender, EventArgs e)
+        {
+            int totalCost = vehicleCost + packageCost;
+
+            string query = "INSERT INTO CustomerBookings (PickupLocation, DeliveryLocation, PickupDate, PreferredTime, Goods, Vehicle, VehicleCost, Package, PackageCost, SpecialInstruction, TotalCost) " +
+                           "VALUES (@Pickup, @Delivery, @PickupDate, @Time, @Goods, @Vehicle, @VehicleCost, @Package, @PackageCost, @Instruction, @TotalCost)";
+
+            SqlConnection con = new SqlConnection(connectionString);
+
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Pickup", pickupLocation);
+                    cmd.Parameters.AddWithValue("@Delivery", deliveryLocation);
+                    cmd.Parameters.AddWithValue("@PickupDate", pickupDate);
+                    cmd.Parameters.AddWithValue("@Time", preferredTime);
+                    cmd.Parameters.AddWithValue("@Goods", selectedGood);
+                    cmd.Parameters.AddWithValue("@Vehicle", selectedVehicle);
+                    cmd.Parameters.AddWithValue("@VehicleCost", vehicleCost);
+                    cmd.Parameters.AddWithValue("@Package", selectedPackage);
+                    cmd.Parameters.AddWithValue("@PackageCost", packageCost);
+                    cmd.Parameters.AddWithValue("@Instruction", specialInstruction);
+                    cmd.Parameters.AddWithValue("@TotalCost", totalCost);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                // Fetch and display data in DataGridView
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM CustomerBookings", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+                con.Close();
+            }
+
+            MessageBox.Show("Booking saved successfully and summary loaded!");
+        }
+
+        private void cuiPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cuiButton4_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+            return;
+        }
+
+        private void cuiPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
+

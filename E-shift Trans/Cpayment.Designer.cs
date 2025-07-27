@@ -49,6 +49,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Cpayment";
             this.Text = "Cpayment";
+            this.Load += new System.EventHandler(this.Cpayment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

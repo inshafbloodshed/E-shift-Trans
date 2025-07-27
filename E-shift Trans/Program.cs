@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 namespace E_shift_Trans
 {
+
+    
     internal static class Program
     {
         /// <summary>

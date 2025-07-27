@@ -1,6 +1,6 @@
 ﻿namespace E_shift_Trans
 {
-    partial class Adashboard
+    partial class Form5
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Adashboard
+            // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Adashboard";
-            this.Text = "Adashboard";
-            this.Load += new System.EventHandler(this.Adashboard_Load);
+            this.Name = "Form5";
+            this.Text = "Form5";
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.ResumeLayout(false);
 
         }

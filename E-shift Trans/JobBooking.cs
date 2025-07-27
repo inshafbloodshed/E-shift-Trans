@@ -13,9 +13,14 @@ namespace E_shift_Trans
     public partial class JobBooking : Form
     {
         private string _customerName;
+       
+
         public JobBooking(string customName)
         {
+
             InitializeComponent();
+       
+            
         }
 
         private void JobBooking_Load(object sender, EventArgs e)
@@ -52,6 +57,7 @@ namespace E_shift_Trans
                     txtDeliveryLocation.Text,
                     dateTimePicker1.Value,
                     comboBox1.SelectedItem.ToString()
+
                 );
 
                 swiftHive.Show();
@@ -61,10 +67,54 @@ namespace E_shift_Trans
 
         private void button2_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void cuiButton4_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+            return;
+        }
+
+        private void cuiButton5_Click(object sender, EventArgs e)
+        {
             ParcelSwift parcelSwift = new ParcelSwift(_customerName);
             parcelSwift.Show();
             this.Hide();
 
+        }
+
+        private void cuiButton1_Click(object sender, EventArgs e)
+        {
+            Cdashboard cdashboard = new Cdashboard(_customerName);
+            cdashboard.Show();
+            this.Hide();
+        }
+
+        private void cuiButton6_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtPickupLocation.Text) ||
+                string.IsNullOrWhiteSpace(txtDeliveryLocation.Text) ||
+                comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please fill in all the required information before continuing.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                // Pass the entered data to SwiftHive
+                SwiftHive swiftHive = new SwiftHive(
+                    txtPickupLocation.Text,
+                    txtDeliveryLocation.Text,
+                    dateTimePicker1.Value,
+                    comboBox1.SelectedItem.ToString()
+                );
+
+                swiftHive.Show();
+                this.Hide();
+            }
         }
     }
 }

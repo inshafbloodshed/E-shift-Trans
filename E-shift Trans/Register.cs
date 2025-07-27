@@ -15,14 +15,17 @@ namespace E_shift_Trans
     public partial class Register : Form
     {
         private string connectionString = @"Data Source=DESKTOP-86QTNGL;Initial Catalog=Admin;Integrated Security=True";
-        public Register()
+        private String CustomerEmail;
+        public Register(string customerEmail)
         {
             InitializeComponent();
+            ;
+            CustomerEmail = customerEmail;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            signup.Enabled = checkBox1.Checked; 
+            cuiButton1.Enabled = checkBox1.Checked; 
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -60,6 +63,16 @@ namespace E_shift_Trans
 
 
         private void signup_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cuiButton1_Click(object sender, EventArgs e)
         {
             {
                 string name = cnametxt.Text.Trim();
@@ -120,6 +133,11 @@ namespace E_shift_Trans
                             {
                                 MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 ClearFields();
+
+                                Cdashboard cdashboard = new Cdashboard(name);
+                                cdashboard.Show();
+                                this.Hide();
+                                return;
                             }
                             else
                             {
@@ -133,6 +151,11 @@ namespace E_shift_Trans
                     MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void cuiPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

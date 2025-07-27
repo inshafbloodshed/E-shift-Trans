@@ -28,183 +28,354 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admindashboard));
+            this.cuiButton1 = new CuoreUI.Controls.cuiButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.cuiPanel1 = new CuoreUI.Controls.cuiPanel();
+            this.cuiButton4 = new CuoreUI.Controls.cuiButton();
+            this.cuiButton2 = new CuoreUI.Controls.cuiButton();
+            this.cuiPictureBox1 = new CuoreUI.Controls.cuiPictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cuiButton5 = new CuoreUI.Controls.cuiButton();
+            this.cuiChartLine1 = new CuoreUI.Controls.Charts.cuiChartLine();
+            this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
+            this.cuiCalendarDatePicker1 = new CuoreUI.Controls.cuiCalendarDatePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.cuiPanel1.SuspendLayout();
+            this.cuiPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // cuiButton1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-2, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(141, 453);
-            this.panel1.TabIndex = 0;
+            this.cuiButton1.BackColor = System.Drawing.Color.Transparent;
+            this.cuiButton1.CheckButton = false;
+            this.cuiButton1.Checked = false;
+            this.cuiButton1.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.cuiButton1.CheckedImageTint = System.Drawing.Color.White;
+            this.cuiButton1.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton1.Content = "Employees";
+            this.cuiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cuiButton1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuiButton1.ForeColor = System.Drawing.Color.White;
+            this.cuiButton1.HoverBackground = System.Drawing.Color.White;
+            this.cuiButton1.HoverForeColor = System.Drawing.Color.Black;
+            this.cuiButton1.HoverImageTint = System.Drawing.Color.White;
+            this.cuiButton1.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton1.Image = null;
+            this.cuiButton1.ImageAutoCenter = true;
+            this.cuiButton1.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton1.Location = new System.Drawing.Point(42, 200);
+            this.cuiButton1.Name = "cuiButton1";
+            this.cuiButton1.NormalBackground = System.Drawing.Color.Transparent;
+            this.cuiButton1.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton1.NormalImageTint = System.Drawing.Color.White;
+            this.cuiButton1.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton1.OutlineThickness = 1F;
+            this.cuiButton1.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.cuiButton1.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.cuiButton1.PressedImageTint = System.Drawing.Color.White;
+            this.cuiButton1.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton1.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiButton1.Size = new System.Drawing.Size(153, 29);
+            this.cuiButton1.TabIndex = 1;
+            this.cuiButton1.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiButton1.TextOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton1.Click += new System.EventHandler(this.cuiButton1_Click);
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "E-Shift Admin";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(186, 143);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(545, 120);
+            this.dataGridView1.TabIndex = 8;
             // 
-            // button1
+            // dataGridView2
             // 
-            this.button1.Location = new System.Drawing.Point(7, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Dashboard";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(186, 23);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(436, 114);
+            this.dataGridView2.TabIndex = 10;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // button2
+            // cuiPanel1
             // 
-            this.button2.Location = new System.Drawing.Point(7, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "All Jobs";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cuiPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cuiPanel1.Controls.Add(this.cuiButton4);
+            this.cuiPanel1.Controls.Add(this.cuiButton2);
+            this.cuiPanel1.Controls.Add(this.cuiPictureBox1);
+            this.cuiPanel1.Controls.Add(this.cuiButton1);
+            this.cuiPanel1.Controls.Add(this.label8);
+            this.cuiPanel1.Controls.Add(this.cuiButton5);
+            this.cuiPanel1.Location = new System.Drawing.Point(-30, -2);
+            this.cuiPanel1.Name = "cuiPanel1";
+            this.cuiPanel1.OutlineThickness = 1F;
+            this.cuiPanel1.PanelColor = System.Drawing.Color.Teal;
+            this.cuiPanel1.PanelOutlineColor = System.Drawing.Color.White;
+            this.cuiPanel1.Rounding = new System.Windows.Forms.Padding(20);
+            this.cuiPanel1.Size = new System.Drawing.Size(177, 457);
+            this.cuiPanel1.TabIndex = 51;
             // 
-            // button3
+            // cuiButton4
             // 
-            this.button3.Location = new System.Drawing.Point(7, 119);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Customer";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cuiButton4.BackColor = System.Drawing.Color.Transparent;
+            this.cuiButton4.CheckButton = false;
+            this.cuiButton4.Checked = false;
+            this.cuiButton4.CheckedBackground = System.Drawing.Color.Transparent;
+            this.cuiButton4.CheckedForeColor = System.Drawing.Color.Transparent;
+            this.cuiButton4.CheckedImageTint = System.Drawing.Color.Teal;
+            this.cuiButton4.CheckedOutline = System.Drawing.Color.Black;
+            this.cuiButton4.Content = "Log Out";
+            this.cuiButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiButton4.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cuiButton4.Font = new System.Drawing.Font("Snap ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuiButton4.ForeColor = System.Drawing.Color.White;
+            this.cuiButton4.HoverBackground = System.Drawing.Color.DarkGray;
+            this.cuiButton4.HoverForeColor = System.Drawing.Color.Black;
+            this.cuiButton4.HoverImageTint = System.Drawing.Color.Black;
+            this.cuiButton4.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton4.Image = null;
+            this.cuiButton4.ImageAutoCenter = true;
+            this.cuiButton4.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton4.ImageOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton4.Location = new System.Drawing.Point(59, 405);
+            this.cuiButton4.Name = "cuiButton4";
+            this.cuiButton4.NormalBackground = System.Drawing.Color.DarkSlateGray;
+            this.cuiButton4.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton4.NormalImageTint = System.Drawing.Color.Teal;
+            this.cuiButton4.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton4.OutlineThickness = 1F;
+            this.cuiButton4.PressedBackground = System.Drawing.SystemColors.ButtonFace;
+            this.cuiButton4.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.cuiButton4.PressedImageTint = System.Drawing.Color.Teal;
+            this.cuiButton4.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton4.Rounding = new System.Windows.Forms.Padding(12);
+            this.cuiButton4.Size = new System.Drawing.Size(91, 24);
+            this.cuiButton4.TabIndex = 52;
+            this.cuiButton4.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiButton4.TextOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton4.Click += new System.EventHandler(this.cuiButton4_Click);
             // 
-            // button4
+            // cuiButton2
             // 
-            this.button4.Location = new System.Drawing.Point(7, 148);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "invoices";
-            this.button4.UseVisualStyleBackColor = true;
+            this.cuiButton2.BackColor = System.Drawing.Color.Transparent;
+            this.cuiButton2.CheckButton = false;
+            this.cuiButton2.Checked = false;
+            this.cuiButton2.CheckedBackground = System.Drawing.Color.Transparent;
+            this.cuiButton2.CheckedForeColor = System.Drawing.Color.Transparent;
+            this.cuiButton2.CheckedImageTint = System.Drawing.Color.Teal;
+            this.cuiButton2.CheckedOutline = System.Drawing.Color.Black;
+            this.cuiButton2.Content = "Dash Board";
+            this.cuiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cuiButton2.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Bold);
+            this.cuiButton2.ForeColor = System.Drawing.Color.Black;
+            this.cuiButton2.HoverBackground = System.Drawing.Color.DarkGray;
+            this.cuiButton2.HoverForeColor = System.Drawing.Color.Black;
+            this.cuiButton2.HoverImageTint = System.Drawing.Color.Black;
+            this.cuiButton2.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton2.Image = null;
+            this.cuiButton2.ImageAutoCenter = true;
+            this.cuiButton2.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton2.Location = new System.Drawing.Point(51, 164);
+            this.cuiButton2.Name = "cuiButton2";
+            this.cuiButton2.NormalBackground = System.Drawing.Color.White;
+            this.cuiButton2.NormalForeColor = System.Drawing.Color.Black;
+            this.cuiButton2.NormalImageTint = System.Drawing.Color.Teal;
+            this.cuiButton2.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton2.OutlineThickness = 1F;
+            this.cuiButton2.PressedBackground = System.Drawing.Color.CadetBlue;
+            this.cuiButton2.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.cuiButton2.PressedImageTint = System.Drawing.Color.Teal;
+            this.cuiButton2.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton2.Rounding = new System.Windows.Forms.Padding(12);
+            this.cuiButton2.Size = new System.Drawing.Size(147, 30);
+            this.cuiButton2.TabIndex = 50;
+            this.cuiButton2.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiButton2.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // button5
+            // cuiPictureBox1
             // 
-            this.button5.Location = new System.Drawing.Point(713, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Add Admin";
-            this.button5.UseVisualStyleBackColor = true;
+            this.cuiPictureBox1.BackColor = System.Drawing.Color.Teal;
+            this.cuiPictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cuiPictureBox1.BackgroundImage")));
+            this.cuiPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cuiPictureBox1.Content = null;
+            this.cuiPictureBox1.ImageTint = System.Drawing.Color.DimGray;
+            this.cuiPictureBox1.Location = new System.Drawing.Point(51, 3);
+            this.cuiPictureBox1.Name = "cuiPictureBox1";
+            this.cuiPictureBox1.OutlineThickness = 1F;
+            this.cuiPictureBox1.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.cuiPictureBox1.Rotation = 0;
+            this.cuiPictureBox1.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiPictureBox1.Size = new System.Drawing.Size(99, 110);
+            this.cuiPictureBox1.TabIndex = 49;
             // 
-            // label2
+            // label8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(221, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Tottal Jobs";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Teal;
+            this.label8.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(73, 110);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 18);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "ADMIN";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // label3
+            // cuiButton5
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(538, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Pending Jobs";
+            this.cuiButton5.BackColor = System.Drawing.Color.Transparent;
+            this.cuiButton5.CheckButton = false;
+            this.cuiButton5.Checked = false;
+            this.cuiButton5.CheckedBackground = System.Drawing.Color.Transparent;
+            this.cuiButton5.CheckedForeColor = System.Drawing.Color.Transparent;
+            this.cuiButton5.CheckedImageTint = System.Drawing.Color.Teal;
+            this.cuiButton5.CheckedOutline = System.Drawing.Color.Black;
+            this.cuiButton5.Content = "Customer";
+            this.cuiButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiButton5.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cuiButton5.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Bold);
+            this.cuiButton5.ForeColor = System.Drawing.Color.White;
+            this.cuiButton5.HoverBackground = System.Drawing.Color.DarkSlateGray;
+            this.cuiButton5.HoverForeColor = System.Drawing.Color.Black;
+            this.cuiButton5.HoverImageTint = System.Drawing.Color.Black;
+            this.cuiButton5.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton5.Image = null;
+            this.cuiButton5.ImageAutoCenter = true;
+            this.cuiButton5.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton5.ImageOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton5.Location = new System.Drawing.Point(59, 235);
+            this.cuiButton5.Name = "cuiButton5";
+            this.cuiButton5.NormalBackground = System.Drawing.Color.Transparent;
+            this.cuiButton5.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton5.NormalImageTint = System.Drawing.Color.Teal;
+            this.cuiButton5.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton5.OutlineThickness = 1F;
+            this.cuiButton5.PressedBackground = System.Drawing.Color.CadetBlue;
+            this.cuiButton5.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.cuiButton5.PressedImageTint = System.Drawing.Color.Teal;
+            this.cuiButton5.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton5.Rounding = new System.Windows.Forms.Padding(12);
+            this.cuiButton5.Size = new System.Drawing.Size(113, 23);
+            this.cuiButton5.TabIndex = 46;
+            this.cuiButton5.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiButton5.TextOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton5.Click += new System.EventHandler(this.cuiButton5_Click);
             // 
-            // label4
+            // cuiChartLine1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(221, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Pending Jobs";
+            this.cuiChartLine1.AutoMaxValue = true;
+            this.cuiChartLine1.AxisColor = System.Drawing.Color.Black;
+            this.cuiChartLine1.BackColor = System.Drawing.Color.Teal;
+            this.cuiChartLine1.ChartLineColor = System.Drawing.Color.Black;
+            this.cuiChartLine1.ChartPadding = 40;
+            this.cuiChartLine1.CustomXAxis = new string[0];
+            this.cuiChartLine1.DataPoints = new float[] {
+        100F,
+        90F,
+        80F,
+        75F,
+        70F,
+        65F,
+        60F};
+            this.cuiChartLine1.DayColor = System.Drawing.Color.White;
+            this.cuiChartLine1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F);
+            this.cuiChartLine1.GradientBackground = true;
+            this.cuiChartLine1.Location = new System.Drawing.Point(4, 4);
+            this.cuiChartLine1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cuiChartLine1.MaxValue = 100F;
+            this.cuiChartLine1.Name = "cuiChartLine1";
+            this.cuiChartLine1.PointColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiChartLine1.ShortDates = true;
+            this.cuiChartLine1.ShowLines = true;
+            this.cuiChartLine1.Size = new System.Drawing.Size(251, 161);
+            this.cuiChartLine1.TabIndex = 52;
+            this.cuiChartLine1.UseBezier = false;
+            this.cuiChartLine1.UsePercent = true;
             // 
-            // panel2
+            // cuiPanel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(224, 147);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(420, 152);
-            this.panel2.TabIndex = 9;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.cuiPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.cuiPanel2.Controls.Add(this.cuiChartLine1);
+            this.cuiPanel2.Location = new System.Drawing.Point(185, 269);
+            this.cuiPanel2.Name = "cuiPanel2";
+            this.cuiPanel2.OutlineThickness = 1F;
+            this.cuiPanel2.PanelColor = System.Drawing.Color.Teal;
+            this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(15);
+            this.cuiPanel2.Size = new System.Drawing.Size(264, 169);
+            this.cuiPanel2.TabIndex = 53;
             // 
-            // label5
+            // cuiCalendarDatePicker1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Recent Jobs";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(7, 177);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Driver";
-            this.button6.UseVisualStyleBackColor = true;
+            this.cuiCalendarDatePicker1.BackColor = System.Drawing.Color.Transparent;
+            this.cuiCalendarDatePicker1.BackgroundImage = global::E_shift_Trans.Properties.Resources._2c4c69cd6e3c224cafbfdc6ab5ccecb9;
+            this.cuiCalendarDatePicker1.Content = new System.DateTime(2025, 7, 25, 0, 0, 0, 0);
+            this.cuiCalendarDatePicker1.EnableThemeChangeButton = true;
+            this.cuiCalendarDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.cuiCalendarDatePicker1.ForeColor = System.Drawing.Color.Black;
+            this.cuiCalendarDatePicker1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiCalendarDatePicker1.HoverOutline = System.Drawing.Color.Transparent;
+            this.cuiCalendarDatePicker1.Icon = ((System.Drawing.Image)(resources.GetObject("cuiCalendarDatePicker1.Icon")));
+            this.cuiCalendarDatePicker1.IconTint = System.Drawing.Color.Black;
+            this.cuiCalendarDatePicker1.Location = new System.Drawing.Point(629, 13);
+            this.cuiCalendarDatePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cuiCalendarDatePicker1.Name = "cuiCalendarDatePicker1";
+            this.cuiCalendarDatePicker1.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiCalendarDatePicker1.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiCalendarDatePicker1.OutlineThickness = 1.5F;
+            this.cuiCalendarDatePicker1.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
+            this.cuiCalendarDatePicker1.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiCalendarDatePicker1.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiCalendarDatePicker1.Rounding = 15;
+            this.cuiCalendarDatePicker1.ShowIcon = true;
+            this.cuiCalendarDatePicker1.Size = new System.Drawing.Size(109, 40);
+            this.cuiCalendarDatePicker1.TabIndex = 54;
+            this.cuiCalendarDatePicker1.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
             // 
             // Admindashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(751, 450);
+            this.Controls.Add(this.cuiCalendarDatePicker1);
+            this.Controls.Add(this.cuiPanel2);
+            this.Controls.Add(this.cuiPanel1);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admindashboard";
             this.Text = "Admindashboard";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Load += new System.EventHandler(this.Admindashboard_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.cuiPanel1.ResumeLayout(false);
+            this.cuiPanel1.PerformLayout();
+            this.cuiPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button6;
+        private CuoreUI.Controls.cuiButton cuiButton1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private CuoreUI.Controls.cuiPanel cuiPanel1;
+        private CuoreUI.Controls.cuiButton cuiButton4;
+        private CuoreUI.Controls.cuiButton cuiButton2;
+        private CuoreUI.Controls.cuiPictureBox cuiPictureBox1;
+        private System.Windows.Forms.Label label8;
+        private CuoreUI.Controls.cuiButton cuiButton5;
+        private CuoreUI.Controls.Charts.cuiChartLine cuiChartLine1;
+        private CuoreUI.Controls.cuiCalendarDatePicker cuiCalendarDatePicker1;
+        private CuoreUI.Controls.cuiPanel cuiPanel2;
     }
 }

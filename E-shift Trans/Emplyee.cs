@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace E_shift_Trans
 {
-    public partial class Adashboard : Form
+    public partial class Emplyee : Form
     {
-        public Adashboard()
+        public Emplyee()
         {
             InitializeComponent();
-        }
-
-        private void Adashboard_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

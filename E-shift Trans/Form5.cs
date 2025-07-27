@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace E_shift_Trans
 {
-    public partial class Driver : Form
+    public partial class Form5 : Form
     {
-        public Driver()
+
+        public Form5()
         {
             InitializeComponent();
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

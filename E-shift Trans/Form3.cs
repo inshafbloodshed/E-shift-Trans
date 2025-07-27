@@ -16,5 +16,10 @@ namespace E_shift_Trans
         {
             InitializeComponent();
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

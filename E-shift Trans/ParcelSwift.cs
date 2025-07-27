@@ -14,12 +14,12 @@ namespace E_shift_Trans
     {
         private string _customerName;
         private int deliverySpeedCost = 0;
+       
         public ParcelSwift(string customerName)
         {
             InitializeComponent();
             txtpicup.Text = "Enter Pickup Location";
             txtlocation.Text = "Enter Delivery Location";
-
             cready.Items.AddRange(new string[] { "Today", "Tomorrow", "Next Week" });
             cready.Text = "None";
             _customerName = customerName;
@@ -70,13 +70,80 @@ namespace E_shift_Trans
                 return;
             }
 
-            packagedelivery packagedelivery = new packagedelivery(txtpicup.Text, 
-                txtlocation.Text, 
-                cready.Text, 
+            packagedelivery packagedelivery = new packagedelivery(txtpicup.Text,
+                txtlocation.Text,
+                cready.Text,
                 deliverySpeedCost);
             packagedelivery.Show();
             this.Hide();
     
+        }
+
+        private void txtNIC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cuiButton5_Click(object sender, EventArgs e)
+        {
+            deliverySpeedCost = 3000;
+        }
+
+        private void cuiButton6_Click(object sender, EventArgs e)
+        {
+            deliverySpeedCost = 1000;
+        }
+
+        private void cuiButton7_Click(object sender, EventArgs e)
+        {
+            deliverySpeedCost = 500;
+        }
+
+        private void cuiButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cuiButton3_Click(object sender, EventArgs e)
+        {
+            JobBooking jobBooking = new JobBooking(_customerName);
+            jobBooking.Show();
+            this.Hide();
+            return;
+
+        }
+
+        private void cuiButton1_Click(object sender, EventArgs e)
+        {
+            Cdashboard cdashboard = new Cdashboard(_customerName);
+            cdashboard.Show();
+            this.Hide();
+
+        }
+
+        private void cuiButton8_Click(object sender, EventArgs e)
+        {
+            if (txtpicup.Text == "" || txtlocation.Text == "" || cready.SelectedIndex == -1 || deliverySpeedCost == 0)
+            {
+                MessageBox.Show("Please complete all fields and select delivery speed.");
+                return;
+            }
+
+            packagedelivery packagedelivery = new packagedelivery(txtpicup.Text,
+                txtlocation.Text,
+                cready.Text,
+                deliverySpeedCost);
+            packagedelivery.Show();
+            this.Hide();
+
+        }
+
+        private void cuiButton4_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+            return;
         }
     }
 }
